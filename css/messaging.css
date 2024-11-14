@@ -1,0 +1,147 @@
+.messaging-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    height: calc(100vh - 140px);
+}
+
+.conversations-list {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.conversations-list h2 {
+    margin-bottom: 20px;
+}
+
+.conversation {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.conversation:hover {
+    transform: translateY(-2px);
+}
+
+.conversation.active {
+    background: #e0e5ec;
+    box-shadow: inset 3px 3px 5px #b8bec5, inset -3px -3px 5px #ffffff;
+}
+
+.conversation-info {
+    margin-left: 15px;
+width:50%
+}
+
+.conversation-info h3 {
+    margin: 0;
+    font-size: 1em;
+}
+
+.conversation-info p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#chat-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+#chat-header h2 {
+    margin-left: 15px;
+}
+
+#messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+}
+
+.message.sent {
+    align-self: flex-end;
+}
+
+.message.received {
+    align-self: flex-start;
+}
+
+.message-content {
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+
+.message.sent .message-content {
+    background: #e0e5ec;
+    box-shadow: 3px 3px 5px #b8bec5, -3px -3px 5px #ffffff;
+}
+
+.message.received .message-content {
+    background: #e0e5ec;
+    box-shadow: inset 3px 3px 5px #b8bec5, inset -3px -3px 5px #ffffff;
+}
+
+.timestamp {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.message-form {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.message-form input {
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .messaging-container {
+        grid-template-columns: 1fr;
+    }
+
+    .conversations-list {
+        display: none;
+    }
+
+    .conversations-list.active {
+        display: block;
+    }
+
+    .chat-container {
+        display: none;
+    }
+
+    .chat-container.active {
+        display: flex;
+    }
+}

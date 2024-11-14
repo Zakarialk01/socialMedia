@@ -1,0 +1,90 @@
+.friends-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.friends-header {
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.friends-header h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+}
+
+.friends-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.friend-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: move;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.friend-card:hover {
+    transform: translateY(-2px);
+}
+
+.friend-card.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.friend-info {
+    flex-grow: 1;
+    margin-left: 15px;
+}
+
+.friend-info h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.status {
+    font-size: 0.9em;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.status.online {
+    color: #4CAF50;
+}
+
+.status.offline {
+    color: #666;
+}
+
+.message-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+    .friend-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .friend-info {
+        margin-left: 0;
+    }
+
+    .message-button {
+        width: 100%;
+    }
+}
